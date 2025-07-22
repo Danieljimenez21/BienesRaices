@@ -6,6 +6,29 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function darkMode(){
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        document.body.classList.add('dark-mode');
+
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+    
+    const preferenciaColor = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function aplicarTema(preferencia){
+        if (preferencia.matches){
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }
+
+    //aplicar al cargar 
+    aplicarTema(preferenciaColor);
+
+    //escuchar los cambios en la preferencia 
+    preferenciaColor.addEventListener('change',(e) => aplicarTema(e));
+
     const botonDarkMode = document.querySelector('.dark-mode-boton');
 
     botonDarkMode.addEventListener('click', function(){

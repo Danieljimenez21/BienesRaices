@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="logotipo de bienes raices">
-                </a>
-
-                <nav class="navegacion">
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="anuncios.html">Anuncios</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-                </nav>
-                
-            </div><!--.cierre barra -->
-        </div>
-    </header>
+<?php include 'includes/templates/header.php'; ?>
 
     <main class="contenedor seccion contenido-centrado">
         <h1>Casa en venta frente al bosque</h1>
@@ -38,15 +12,15 @@
             <p class="precio">$3,000,000</p>
                 <ul class="iconos-caracteristicas">
                     <li>
-                        <img loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+                        <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                         <p>3</p>
                     </li>
                     <li>
-                        <img loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                        <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
                         <p>3</p>
                     </li>
                     <li>
-                        <img loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+                        <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
                         <p>4</p>
                     </li>
                 </ul>
@@ -54,6 +28,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit perspiciatis dolorum quod explicabo, dolorem esse praesentium delectus doloribus laudantium nam maxime, quidem veritatis, officia non! Quod sequi libero accusantium amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, iste maiores magni iure quia cum neque, totam quisquam vel voluptatem officia quas molestias laboriosam. Dolorum enim eos facilis adipisci veniam.</p>
 
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid perferendis ducimus porro cum aliquam aut quibusdam, provident ex nihil facere, veritatis ipsum eos doloremque nulla similique quo aspernatur totam adipisci.</p>
+                
         </div>
     </main>
     
@@ -61,10 +36,10 @@
 
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.php">Nosotros</a>
+                <a href="anuncios.php">Anuncios</a>
+                <a href="blog.php">Blog</a>
+                <a href="contacto.php">Contacto</a>
             </nav>
         </div>
         <p class="copyright">Todos los derechos reservados 2021 &copy;</p>

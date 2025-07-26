@@ -30,9 +30,9 @@
     padding-top: 3rem;
 
     @include tablet {
-        align-items: flex-end;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-end;
     }
 }
 

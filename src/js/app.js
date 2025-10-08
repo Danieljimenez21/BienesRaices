@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     eventListeners();
 
-    darkMode();
+    // darkMode();
 });
 
 function darkMode(){

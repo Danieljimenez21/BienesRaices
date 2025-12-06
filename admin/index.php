@@ -1,5 +1,12 @@
 <?php 
 
+    require '../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if(!$auth){
+        header('Location: /');
+    }
+
     // importar la conexion 
     require '../includes/config/database.php';
     $db = conectarDB();
@@ -14,24 +21,32 @@
     //muestra mensaje condicional
     $resultado = $_GET['resultado'] ?? null;
 
-    if($_SERVER['REQUEST_METHOD'] = 'POST'){
-        $id = $_POST['id'];
-        var_dump($_POST);
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $id = $_POST['id'] ?? null; //evita el warning existente
         $id = filter_var($id, FILTER_VALIDATE_INT);
       
         if($id){
+
+            //Eliminar el archivo 
+            $query = "SELECT imagen FROM propiedades WHERE id = $id";
+
+            $resultado = mysqli_query($db, $query);
+            $propiedad = mysqli_fetch_assoc($resultado);
+
+            unlink('../imagenes/' . $propiedad['imagen']);
+
+            //Eliminar la propiedad
             $query = "DELETE FROM propiedades WHERE id = $id";
-            
             $resultado = mysqli_query($db, $query);
 
             if($resultado){
-                header('location: /admin');
+                header('location: /admin?resultado=3');
             }
         }
     }
 
     //incluye template
-    require '../includes/funciones.php';
+    // require '../includes/funciones.php';
     incluirTemplate('header');
 ?>
 
@@ -41,8 +56,10 @@
             <p class="alerta exito">Anuncio creado correctamente</p>
         <?php elseif(intval($resultado) === 2): ?>
             <p class="alerta exito" >Anuncio Actualizado Correctamente</p>
-
+        <?php elseif(intval($resultado) === 3): ?>
+            <p class="alerta exito" >Anuncio Eliminado Correctamente</p>
         <?php endif;?>
+
         <a href="/admin/propiedades/crear.php" class="boton boton-verde">Nueva propiedad</a>
 
         <table class="propiedades"> 
@@ -64,7 +81,6 @@
                     <td>$ <?php echo $propiedad['precio']; ?></td>
                     <td>
                         <form method="POST" class="w-100">
-
                             <input type="hidden" name="id" value="<?php echo $propiedad['id']; ?>" >
 
                             <input type="submit" class="boton-rojo-block" value="Eliminar">

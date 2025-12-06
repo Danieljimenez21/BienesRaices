@@ -4,7 +4,7 @@
 ?>
 
     <main class="contenedor seccion">
-        <h1>base</h1>
+        <h1>Titulo pagina</h1>
     </main>
     
 <?php 

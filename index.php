@@ -1,5 +1,5 @@
 <?php 
-    require 'includes/funciones.php';
+    require 'includes/app.php';
     incluirTemplate('header', $inicio = true);
 ?>
 
@@ -61,7 +61,6 @@
                     <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p class="informacion-meta" >Escrito el <span>20/10/2021</span> por: <span>Admin</span></p>
-
                         <p>
                             consejos para contruir una terraza en el techo de tu casa con los mejores materiales y ahorrando dinero
                         </p>

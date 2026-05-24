@@ -1,54 +1,54 @@
-// document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function(){
 
-//     eventListeners();
+    eventListeners();
 
-//     darkMode();
+    darkMode();
     
-// });
+});
 
-// function darkMode(){
-//     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-//         document.body.classList.add('dark-mode');
+function darkMode(){
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        document.body.classList.add('dark-mode');
 
-//     } else {
-//         document.body.classList.remove('dark-mode');
-//     }
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
     
-//     const preferenciaColor = window.matchMedia('(prefers-color-scheme: dark)');
+    const preferenciaColor = window.matchMedia('(prefers-color-scheme: dark)');
 
-//     function aplicarTema(preferencia){
-//         if (preferencia.matches){
-//             document.body.classList.add('dark-mode');
-//         } else {
-//             document.body.classList.remove('dark-mode');
-//         }
-//     }
+    function aplicarTema(preferencia){
+        if (preferencia.matches){
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }
 
-//     //aplicar al cargar 
-//     aplicarTema(preferenciaColor);
+    //aplicar al cargar 
+    aplicarTema(preferenciaColor);
 
-//     //escuchar los cambios en la preferencia 
-//     preferenciaColor.addEventListener('change',(e) => aplicarTema(e));
+    //escuchar los cambios en la preferencia 
+    preferenciaColor.addEventListener('change',(e) => aplicarTema(e));
 
-//     const botonDarkMode = document.querySelector('.dark-mode-boton');
+    const botonDarkMode = document.querySelector('.dark-mode-boton');
 
-//     botonDarkMode.addEventListener('click', function(){
-//         document.body.classList.toggle('dark-mode');
-//     })
-// }
+    botonDarkMode.addEventListener('click', function(){
+        document.body.classList.toggle('dark-mode');
+    })
+}
 
-// function eventListeners(){
-//     const mobileMenu = document.querySelector('.mobile-menu');
+function eventListeners(){
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-//     mobileMenu.addEventListener('click', navegacionResponsive);
-// }
+    mobileMenu.addEventListener('click', navegacionResponsive);
+}
 
-// function navegacionResponsive(){
-//     const navegacion = document.querySelector('.navegacion');
+function navegacionResponsive(){
+    const navegacion = document.querySelector('.navegacion');
 
-//     if(navegacion.classList.contains('mostrar')){
-//         navegacion.classList.remove('mostrar');
-//     } else {
-//         navegacion.classList.add('mostrar');
-//     }
-// }
+    if(navegacion.classList.contains('mostrar')){
+        navegacion.classList.remove('mostrar');
+    } else {
+        navegacion.classList.add('mostrar');
+    }
+}

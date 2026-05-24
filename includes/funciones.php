@@ -8,7 +8,7 @@ function incluirTemplate ( string $nombre, bool $inicio = false){
     include TEMPLATES_URL . "/{$nombre}.php";
 }
 
-function estaAutenticado() : bool {
+function estaAutenticado() {
     session_start();
 
     $auth = $_SESSION['login'];
@@ -16,6 +16,12 @@ function estaAutenticado() : bool {
     if($auth){
         return true;
     }
-    
     return false;
+}
+
+function debugear($variable){
+    echo"<pre>";
+    var_dump($variable);
+    echo"</pre>";
+    exit;
 }
